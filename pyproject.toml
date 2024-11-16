@@ -1,0 +1,90 @@
+[project]
+name = "requests_debugger"
+version = "0.1.0"
+description = "Simplist possible tool to dump request and response statuses, headers and content to file or console"
+readme = "README.rst"
+authors = [{name = "Tom Hodder", email = "tom@limepepper.co.uk"}]
+maintainers = [{name = "Tom Hodder", email = "tom@limepepper.co.uk"}]
+license = {text = "MIT license"}
+dependencies = [  "typer"]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/tolland/requests_debugger/issues"
+changelog = "https://github.com/tolland/requests_debugger/blob/master/changelog.md"
+homepage = "https://github.com/tolland/requests_debugger"
+
+
+[tool.poetry]
+name = "requests-debugger"
+version = "0.2.1"
+description = "Simplist possible tool to dump request and response statuses, headers and content to file or console"
+authors = ["Tom Hodder <tom@limepepper.co.uk>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "requests_debugger", from = "src" },
+    { include = "fast_api", from = "src" },
+    { include = "myapi", from = "src" },
+
+]
+[tool.poetry.scripts]
+mycli = "fast_api.cli:app"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+loguru = "^0.7.2"
+typer = "^0.13.0"
+uvicorn = "^0.32.0"
+
+[tool.poetry.group.test.dependencies]
+pytest-randomly = "^3.15.0"
+pytest = "^8.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pre-commit = "^4.0.1"
+black = "^24.10.0"
+Sphinx = "^7.2.6"
+gunicorn = "^23.0.0"
+celery = {extras = ["redis"], version = "^5.4.0"}
+flask-restful = "^0.3.10"
+flask = "^3.1.0"
+flask-jwt-extended = "^4.6.0"
+flask-marshmallow = "^1.2.1"
+flask-sqlalchemy = "^3.1.1"
+flask-migrate = "^4.0.7"
+passlib = "^1.7.4"
+apispec-webframeworks = "^1.2.0"
+apispec = {extras = ["yaml"], version = "^6.7.1"}
+python-dotenv = "^1.0.1"
+marshmallow = "^3.23.1"
+marshmallow-sqlalchemy = "^1.1.0"
+fastapi = "^0.115.5"
+rich = "^13.9.4"
+pydantic = "^2.9.2"
+sqlmodel = "^0.0.22"
+pydantic-settings = "^2.6.1"
+fastapi-crudrouter = "^0.8.6"
+fastapi-client = "^0.1.0"
+api-client = "^1.3.1"
+api-client-pydantic = "^3.0.1"
+factory-boy = "^3.3.1"
+requests-toolbelt = "^1.0.0"
+
+[tool.uv.workspace]
+members = ["temp21"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
